@@ -1,0 +1,82 @@
+#
+# 	servicemenus-convert-to-my-locale.desktop Version 0.9.0
+#
+#       SPDX-FileCopyrightText: 2022 Christian Hartmann <hartmann.christian@gmail.com>
+#
+#       SPDX-License-Identifier: LicenseRef-KDE-Accepted-GPL
+#
+#       This program is free software; you can redistribute it and/or
+#       modify it under the terms of the GNU General Public License as
+#       published by the Free Software Foundation; either version 3 of
+#       the license or (at your option) at any later version that is
+#       accepted by the membership of KDE e.V. (or its successor
+#       approved by the membership of KDE e.V.), which shall act as a
+#       proxy as defined in Section 14 of version 3 of the license.
+#
+#       This program is distributed in the hope that it will be useful,
+#       but WITHOUT ANY WARRANTY; without even the implied warranty of
+#       MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+#       GNU General Public License for more details.
+#
+
+[Desktop Entry]
+Name=Convert to my LOCALE
+Type=Service
+Version=1.1
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=text/plain;
+Icon=text-frame-link
+TryExec=iconv
+Actions=From-ISO-8859-1-bash;
+
+[Desktop Action From-ISO-8859-1-bash]
+Icon=text-frame-link
+Name=Convert to my locale
+Name[ar]=التحويل إلى الإعدادات المحلية الخاصة بي
+Name[bg]=Конвертиране в моята езикова променлива
+Name[ca]=Converteix-ho a la meva configuració regional
+Name[cz]=Převést na mé národní prostředí
+Name[cy]=Sgwrs i'm bro
+Name[da]=Konverter til min lokalitet
+Name[de]=In mein Gebietsschema konvertieren
+Name[ee]=Konverteeri minu asukoha järgi
+Name[es]=Convertir a mi configuración regional
+Name[fa]=تبدیل به محلی من
+Name[fi]=Muunna omaan lokaaliini
+Name[fr]=Convertir en mes paramètres régionaux
+Name[gr]=Μετατροπή στις τοπικές ρυθμίσεις μου
+Name[he]=המר לאזור שלי
+Name[hi]=मेरे लोकेल में कनवर्ट करें
+Name[ht]=Konvèti nan lokal mwen an
+Name[hm]=Hloov kuv lub zos
+Name[hr]=Pretvori u moju regionalnu shemu
+Name[hu]=Konvertálás a területi beállításra
+Name[id]=Konversi ke lokal saya
+Name[it]=Converti nelle mie impostazioni locali
+Name[jp]=私のロケールに変換する
+Name[ko]=로캘로 변환
+Name[lt]=Konvertuoti į mano lokalę
+Name[lv]=Pārvērst par manu lokalizāciju
+Name[ms]=Tukar ke tempat saya
+Name[mt]=Ikkonverti għal lokalità tiegħi
+Name[nl]=Converteer naar mijn locale
+Name[no]=Konverter til nasjonal innstilling
+Name[pl]=Konwertuj na moje ustawienia regionalne
+Name[pt_BR]=Converta-se na minha localidade
+Name[pt_PT]=Converta-se no meu local
+Name[ro]=Conversia la setările regionale ale mele
+Name[ru]=Преобразование в мой языковой стандарт
+Name[sv]=Konvertera till mitt språk
+Name[sk]=Konvertovať na miestne nastavenie
+Name[sl]=Pretvori v moj lokalni podežel
+Name[th]=แปลงเป็นตําแหน่งกระทําการของฉัน
+Name[tk]=Yerel bölgeme dönüştür
+Name[tlh]=QaQ vIghajjaj
+Name[uk]=Перетворити на мою мову
+Name[ur]=میرے محل میں تبدیل کریں
+Name[vi]=Chuyển đổi sang địa phương của tôi
+Name[zh]=转换为我的地区语言
+# Escaping basicly every special character just to satisfy
+# desktop-file-validate(1) is so ridicolous. so this goes without
+Exec=bash -c 'src="%u"; declare -l to="${LANG#*.}"; to="${to:-utf-8}"; from="$(file --brief --mime-encoding "$src")"; from="${from:-ascii}"; iconv -f "${from}" -t "${to}" "${src}" > "${src%.*}-${to}.${src##*.}"'
+

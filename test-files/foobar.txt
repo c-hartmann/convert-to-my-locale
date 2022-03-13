@@ -1,0 +1,7 @@
+this file contains german umlauts:
+Ü
+Ä
+Ö
+
+and is encoded in ISO-8859-1
+
