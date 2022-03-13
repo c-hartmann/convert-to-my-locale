@@ -1,5 +1,7 @@
 # Convert to my LOCALE
 
+![logo](img/convert-to-my-locale-logo.png)
+
 A KDE 5 dolphin context menu extension (aka Service Menu), that let's you
 convert any plain text file to your locale (Language Settings) encoding via
 iconv(1).
@@ -18,4 +20,9 @@ these without annoying unreadable characters.
 
 It is coded with %u (see Desktop Entry Specification), so this might work on
 remote files as well. (not tested)
+
+After Installation this new action should be available (if more than one action
+applies to file(s), it will be located as a submenu under "Actions".
+
+![in-action-screenshot](img/convert-to-my-locale-action.png)
 
