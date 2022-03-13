@@ -1,5 +1,5 @@
 theme: jekyll-theme-minimal
 title: Convert to my LOCALE
 description: A KDE Plasma Dolphin Service Menu
-logo: assets/images/convert-to-my-locale-logo.png
+logo: https://raw.githubusercontent.com/c-hartmann/convert-to-my-locale/main/assets/images/convert-to-my-locale-logo.png
 show_downloads: true
