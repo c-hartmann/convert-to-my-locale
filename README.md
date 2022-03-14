@@ -1,4 +1,4 @@
-# Convert to my LOCALE
+# Convert to my Locale
 
 ![logo](assets/images/convert-to-my-locale-logo.png)
 

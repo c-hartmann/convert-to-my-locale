@@ -20,7 +20,7 @@
 #
 
 [Desktop Entry]
-Name=Convert to my LOCALE
+Name=Convert to my Locale
 Type=Service
 Version=1.1
 X-KDE-ServiceTypes=KonqPopupMenu/Plugin
@@ -31,7 +31,7 @@ Actions=From-ISO-8859-1-bash;
 
 [Desktop Action From-ISO-8859-1-bash]
 Icon=text-frame-link
-Name=Convert to my locale
+Name=Convert to my Locale
 Name[ar]=التحويل إلى الإعدادات المحلية الخاصة بي
 Name[bg]=Конвертиране в моята езикова променлива
 Name[ca]=Converteix-ho a la meva configuració regional
