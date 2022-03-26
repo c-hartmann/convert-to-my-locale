@@ -78,4 +78,4 @@ Name[vi]=Chuyển đổi sang địa phương của tôi
 Name[zh]=转换为我的地区语言
 # Escaping basicly every special character just to satisfy desktop-file-validate(1)
 # is so ridicolous. so this goes without any escaping at all. take this :)
-Exec=bash -c 'src="%u" ; declare -u from ; from="$(file --brief --mime-encoding "$src")" ; from="${from:-ASCII}" ; declare -u to="${LANG#*.}" ; to="${to:-UTF-8}" ; iconv -f "${from}" -t "${to}" "${src}" > "${src%.*}-${to,,}.${src##*.}" ;'
+Exec=bash -c 'src="%u" ; tf=$(mktemp) ; declare -u from ; from="$(file --brief --mime-encoding "$src")" ; from="${from:-ASCII}" ; declare -u to="${LANG#*.}" ; to="${to:-UTF-8}" ; iconv -f "${from}" -t "${to}" "${src}" > "${src%.*}-${to,,}.${src##*.}" 2>${tf} ; ex=$? ; error="$(cat ${tf})" ; rm ${tf} ; (( ${ex} == 0 )) || kdialog --error "${error}" ;'
